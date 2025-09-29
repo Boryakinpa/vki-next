@@ -1,7 +1,7 @@
-import { getGroupsDb } from '@/db/groupDb';
+import { getStudentsDb } from '@/db/studentDb';
 
 export async function GET(): Promise<Response> {
-  const groups = await getGroupsDb();
+  const groups = await getStudentsDb();
 
   return new Response(JSON.stringify(groups), {
     headers: {

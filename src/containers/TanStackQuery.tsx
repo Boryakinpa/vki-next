@@ -4,7 +4,7 @@ import { QueryClientProvider, type DehydratedState } from '@tanstack/react-query
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { HydrationBoundary } from '@tanstack/react-query';
 
-import queryClient from '@/api/reactQueryClient';
+import queryClient from '@/app/api/reactQueryClient';
 
 interface Props {
   state: DehydratedState;
