@@ -8,7 +8,7 @@ export const getStudentsDb = async(): Promise<StudentInterface[]> => {
   const db = new sqlite3.Database(process.env.DB ?? './db/vki-web.db');
   
   const students = await new Promise((resolve, reject) => {
-    const sql = 'SELECT S.id, S.first_name, S.last_name, S.middle_name, G.name AS group_name FROM students S INNER JOIN [groups] G ON S.group_id == G.id';
+    const sql = 'SELECT S.id, S.first_name, S.last_name, S.middle_name, G.name AS group_name, S.isDeleted AS isDeleted FROM students S INNER JOIN [groups] G ON S.group_id == G.id';
     db.all(sql, [], (err, rows) => {
       if (err) {
         console.log(err);
@@ -22,4 +22,12 @@ export const getStudentsDb = async(): Promise<StudentInterface[]> => {
   });
   console.log(students);
   return students as StudentInterface[]
+}
+
+export const deleteStudentDb = async(id: number): Promise<number> => {
+  const db = new sqlite3.Database(process.env.DB ?? './db/vki-web.db');
+
+  const sql = `UPDATE students SET isDeleted = 1 WHERE id = ${id}`
+  await db.run(sql);
+  return id;
 }

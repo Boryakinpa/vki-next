@@ -1,4 +1,5 @@
 import type StudentInterface from "@/types/StudentInterface.ts";
+import { DELETE } from "@/app/api/students/[id]/route"
 export const getStudentsApi = async (): Promise<StudentInterface[]> => {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API}students`);
@@ -14,3 +15,21 @@ export const getStudentsApi = async (): Promise<StudentInterface[]> => {
     return [] as StudentInterface[];
   }
 };
+
+export const deleteStudentApi = async (id: number): Promise<number> => {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API}students/${id}`, {
+      method: 'DELETE'
+    });
+
+    if (!response.ok) {
+      throw new Error(`Ошибка HTTP: ${response.status}${response.statusText}`);
+    }
+    const deleteId = await response.json() as number;
+    return deleteId;
+  }
+  catch (err) {
+    console.log('>>> deleteStudentsApi', err);
+    return -1;
+  }
+}
