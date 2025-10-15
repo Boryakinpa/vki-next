@@ -1,5 +1,5 @@
-import type StudentInterface from '@/types/StudentInterface';
-import styles from './Student.module.scss';
+import type StudentInterface from "@/types/StudentInterface";
+import styles from "./Student.module.scss";
 
 interface Props {
   student: StudentInterface;
@@ -12,15 +12,12 @@ const Student = ({ student, onDelete }: Props): React.ReactElement => {
   };
 
   return (
-    <div className={`${styles.Student} ${student.isDeleted ? styles['--isDeleted'] : '' }`}>
+    <div
+      className={`${styles.Student} ${student.isDeleted ? styles["--isDeleted"] : ""}`}
+    >
       {student.id}
-      {' - '}
-      {student.last_name}
-      {' '}
-      {student.first_name}
-      {' '}
-      {student.middle_name}
-      {' '}
+      {" - "}
+      {student.last_name} {student.first_name} {student.middle_name}{" "}
       <button onClick={onDeleteHandler}>Удалить</button>
     </div>
   );

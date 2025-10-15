@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import useGroups from '@/hooks/useGroups';
-import type GroupInterface from '@/types/GroupInterface';
-import styles from './Groups.module.scss';
+import useGroups from "@/hooks/useGroups";
+import type GroupInterface from "@/types/GroupInterface";
+import styles from "./Groups.module.scss";
 
 const Groups = (): React.ReactElement => {
   const { groups } = useGroups();
@@ -10,9 +10,7 @@ const Groups = (): React.ReactElement => {
   return (
     <div className={styles.Groups}>
       {groups.map((group: GroupInterface) => (
-        <h2 key={group.id}>
-          {group.name}
-        </h2>
+        <h2 key={group.id}>{group.name}</h2>
       ))}
     </div>
   );

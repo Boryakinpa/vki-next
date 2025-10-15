@@ -1,15 +1,13 @@
-import type ChildrenType from '@/types/ChildrenType';
+import type ChildrenType from "@/types/ChildrenType";
 
-import styles from './Page.module.scss';
+import styles from "./Page.module.scss";
 
 interface Props {
   children?: ChildrenType;
 }
 
 const Page = ({ children }: Props): React.ReactElement => (
-  <div className={styles.main}>
-    {children}
-  </div>
+  <div className={styles.main}>{children}</div>
 );
 
 export default Page;

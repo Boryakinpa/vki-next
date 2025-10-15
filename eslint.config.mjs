@@ -37,16 +37,15 @@ export default [
       //   rootDir: ["."], // Point to your Next.js root
       // },
       react: {
-        version: 'detect', // Automatically detect React version
+        version: "detect", // Automatically detect React version
       },
     },
     rules: {
       ...js.configs.recommended.rules, // Use recommended ruleset
 
-
       // ...next.configs.recommended.rules, // Add next.js recommended rules
       // ...next.configs.coreWebVitals.rules,  // Add next.js core web vitals rules,
-      ...typescriptEslintPlugin.configs["recommended-type-checked"].rules,  // Enable recommended typescript rules
+      ...typescriptEslintPlugin.configs["recommended-type-checked"].rules, // Enable recommended typescript rules
       ...stylistic.configs.recommended.rules,
 
       // Stylistic rules (configure these to your preference)
@@ -64,7 +63,7 @@ export default [
 
       // React specific rules
       "react/jsx-uses-react": "off",
-      "react/react-in-jsx-scope": "off",  // Next.js doesn't require importing React
+      "react/react-in-jsx-scope": "off", // Next.js doesn't require importing React
       "react/prop-types": "off", // TS handles prop types
 
       // Next.js specific rules - configure as needed.
@@ -72,7 +71,6 @@ export default [
 
       // Possible Errors
       "no-console": "off", //  or "error" depending on your preference
-
 
       // Best Practices
       eqeqeq: "error", // Enforce strict equality === and !==
@@ -98,17 +96,16 @@ export default [
       "@stylistic/member-delimiter-style": [
         "warn",
         {
-          "multiline": {
-            "delimiter": "semi",
-            "requireLast": true
+          multiline: {
+            delimiter: "semi",
+            requireLast: true,
           },
-          "singleline": {
-            "delimiter": "semi",
-            "requireLast": false
+          singleline: {
+            delimiter: "semi",
+            requireLast: false,
           },
-          "multilineDetection": "brackets"
-        }
-
+          multilineDetection: "brackets",
+        },
       ],
     },
   },

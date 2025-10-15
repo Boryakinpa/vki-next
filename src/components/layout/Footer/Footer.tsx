@@ -1,12 +1,8 @@
-import styles from './Footer.module.scss';
+import styles from "./Footer.module.scss";
 
 const Header = (): React.ReactElement => (
   <footer className={styles.Footer}>
-    ©
-    {' '}
-    {(new Date()).getFullYear()}
-    {' '}
-    Высший колледж информатики НГУ
+    © {new Date().getFullYear()} Высший колледж информатики НГУ
   </footer>
 );
 

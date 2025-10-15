@@ -1,4 +1,4 @@
-import type GroupInterface from '@/types/GroupInterface';
+import type GroupInterface from "@/types/GroupInterface";
 
 export const getGroupsApi = async (): Promise<GroupInterface[]> => {
   try {
@@ -7,11 +7,10 @@ export const getGroupsApi = async (): Promise<GroupInterface[]> => {
     if (!response.ok) {
       throw new Error(`Ошибка HTTP: ${response.status}${response.statusText}`);
     }
-    const groups = await response.json() as GroupInterface[];
+    const groups = (await response.json()) as GroupInterface[];
     return groups;
-  }
-  catch (err) {
-    console.log('>>> getGroupsApi', err);
+  } catch (err) {
+    console.log(">>> getGroupsApi", err);
     return [] as GroupInterface[];
   }
 };

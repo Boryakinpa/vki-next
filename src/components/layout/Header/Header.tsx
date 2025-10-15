@@ -1,6 +1,6 @@
-import Menu from '../Menu/Menu';
+import Menu from "../Menu/Menu";
 
-import styles from './Header.module.scss';
+import styles from "./Header.module.scss";
 
 const Header = (): React.ReactElement => (
   <header className={styles.Header}>

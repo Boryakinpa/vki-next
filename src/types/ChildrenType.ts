@@ -1,3 +1,7 @@
-type ChildrenType = React.ReactElement[] | React.ReactElement | string | (React.ReactElement | string)[];
+type ChildrenType =
+  | React.ReactElement[]
+  | React.ReactElement
+  | string
+  | (React.ReactElement | string)[];
 
 export default ChildrenType;
