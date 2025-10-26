@@ -12,12 +12,13 @@ const AddStudent: React.FC = () => {
   const onSubmit: SubmitHandler<StudentInterface> = (data) => {
     const newStudent: StudentInterface = {
       id: 0,
-      first_name: data.first_name.trim(),
-      middle_name: data.middle_name?.trim() ?? "",
-      last_name: data.last_name.trim(),
-      group_id: Number(data.group_id) || 1,
-      group_name: "",
+      firstName: data.firstName.trim(),
+      middleName: data.middleName?.trim() ?? "",
+      lastName: data.lastName.trim(),
+      groupId: Number(data.groupId) || 1,
+      groupName: "",
       isDeleted: false,
+      contacts: "",
     };
 
     addStudentMutate(newStudent);
@@ -28,18 +29,18 @@ const AddStudent: React.FC = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <input
         type="text"
-        {...register("first_name", { required: true })}
+        {...register("firstName", { required: true })}
         placeholder="Имя"
       />
-      <input type="text" {...register("middle_name")} placeholder="Отчество" />
+      <input type="text" {...register("middleName")} placeholder="Отчество" />
       <input
         type="text"
-        {...register("last_name", { required: true })}
+        {...register("lastName", { required: true })}
         placeholder="Фамилия"
       />
       <input
         type="number"
-        {...register("group_id", { required: true, min: 1 })}
+        {...register("groupId", { required: true, min: 1 })}
         placeholder="ID группы"
       />
 

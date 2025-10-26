@@ -6,7 +6,7 @@ export async function POST(request: Request): Promise<Response> {
     const student = (await request.json()) as StudentInterface;
 
     const insertedId = await addStudentDb(student);
-    student.id = insertedId;
+    student.id = insertedId.id;
 
     return new Response(JSON.stringify(student), {
       headers: { "Content-Type": "application/json" },
